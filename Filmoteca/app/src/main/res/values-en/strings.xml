@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Filmoteca</string>
+    <string name="button">Get support</string>
+    <string name="button2">Go to web</string>
+    <string name="button3">Go back</string>
+    <string name="textView">Created by Serhii</string>
+    <string name="textError">Not implemented</string>
+</resources>

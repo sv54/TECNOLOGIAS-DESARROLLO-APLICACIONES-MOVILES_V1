@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Filmoteca</string>
+    <string name="button">Obtener soporte</string>
+    <string name="button2">Ir a sitio web</string>
+    <string name="button3">Volver</string>
+    <string name="textView">Creada por Serhii</string>
+    <string name="textError">Funcionalidad sin implementar</string>
+
+</resources>
