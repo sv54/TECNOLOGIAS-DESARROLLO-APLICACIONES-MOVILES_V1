@@ -7,7 +7,7 @@
     tools:context=".FilmDataActivity">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/verPeliRelacionada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="105dp"
@@ -16,10 +16,10 @@
         android:text="Ver película relacionada"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/DatosPelicula" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
@@ -28,22 +28,23 @@
         android:text="Editar película"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/verPeliRelacionada" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/volverAPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="119dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="119dp"
         android:text="Volver a la principal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/editar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/DatosPelicula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"

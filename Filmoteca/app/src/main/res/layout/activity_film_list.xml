@@ -8,7 +8,7 @@
     tools:context=".FilmListActivity">
 
   <Button
-      android:id="@+id/button6"
+      android:id="@+id/acercaDe"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="138dp"
@@ -17,10 +17,10 @@
       android:text="Acerca De"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/button5" />
+      app:layout_constraintTop_toBottomOf="@+id/peliB" />
 
   <Button
-      android:id="@+id/button4"
+      android:id="@+id/peliA"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="137dp"
@@ -32,14 +32,14 @@
       app:layout_constraintTop_toTopOf="parent" />
 
   <Button
-      android:id="@+id/button5"
+      android:id="@+id/peliB"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="35dp"
       android:layout_marginEnd="138dp"
       android:layout_marginBottom="37dp"
       android:text="Ver pelicula B"
-      app:layout_constraintBottom_toTopOf="@+id/button6"
+      app:layout_constraintBottom_toTopOf="@+id/acercaDe"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/button4" />
+      app:layout_constraintTop_toBottomOf="@+id/peliA" />
 </androidx.constraintlayout.widget.ConstraintLayout>
