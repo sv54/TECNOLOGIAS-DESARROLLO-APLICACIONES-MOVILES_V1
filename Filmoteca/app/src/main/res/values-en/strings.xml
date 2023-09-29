@@ -5,4 +5,20 @@
     <string name="button3">Go back</string>
     <string name="textView">Created by Serhii</string>
     <string name="textError">Not implemented</string>
+    <string name="genero">Genre</string>
+    <string name="formato">Format</string>
+    <string name="TituloPelicula">Sanic</string>
+    <string name="Director">Director</string>
+    <string name="año">Year</string>
+    <string name="Categoria">Comedy</string>
+    <string name="TituloHint">Film title</string>
+    <string name="NombreHint">Directors name</string>
+    <string name="EnlaceHint">Link IMDB</string>
+    <string name="NotasHint">Notes</string>
+    <string name="GuardarBoton">Save</string>
+    <string name="CancelarBoton">Cancel</string>
+    <string name="TomarFotoBoton">Take Foto</string>
+    <string name="SeleccionarImagenBoton">Select image</string>
+    <string name="EditarBoton">Edit film</string>
+    <string name="VolverPrincipalBoton">Back to the beginning</string>
 </resources>

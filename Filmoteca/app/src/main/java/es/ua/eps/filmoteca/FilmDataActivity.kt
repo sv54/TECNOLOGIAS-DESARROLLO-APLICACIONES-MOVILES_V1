@@ -2,6 +2,7 @@ package es.ua.eps.filmoteca
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,9 +30,13 @@ class FilmDataActivity : AppCompatActivity() {
 
         val relacionada = findViewById<Button>(R.id.verPeliRelacionada)
         relacionada.setOnClickListener {
-            val data = Intent(this@FilmDataActivity, FilmDataActivity::class.java)
-            data.putExtra("EXTRA_FILM_TITLE", pelicula)
-            startActivity(data)
+            //data.putExtra("EXTRA_FILM_TITLE", pelicula)
+            val viewIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.imdb.com"))
+            startActivity(viewIntent)
+            //startActivity(data)
+
         }
 
         val editar = findViewById<Button>(R.id.editar)

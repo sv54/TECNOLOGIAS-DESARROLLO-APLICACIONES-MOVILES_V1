@@ -42,4 +42,5 @@
       app:layout_constraintBottom_toTopOf="@+id/acercaDe"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/peliA" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

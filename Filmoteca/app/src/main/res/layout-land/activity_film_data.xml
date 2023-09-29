@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="735dp"
+        android:layout_height="81dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:background="#2196F3"
@@ -27,7 +27,7 @@
         android:text="Filmoteca"
         android:textColor="#000000"
         android:textColorHint="#000000"
-        android:textSize="24sp"
+        android:textSize="46dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
@@ -37,54 +37,54 @@
         android:id="@+id/verPeliRelacionada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="96dp"
         android:text="Ver en IMDB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VerticalLayout" />
+        app:layout_constraintStart_toEndOf="@+id/VerticalLayout"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="340dp"
-        android:text="@string/EditarBoton"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="164dp"
+        android:text="Editar película"
+        app:layout_constraintStart_toEndOf="@+id/VerticalLayout"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/volverAPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="28dp"
-        android:text="@string/VolverPrincipalBoton"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="232dp"
+        android:text="Volver a la principal"
+        app:layout_constraintStart_toEndOf="@+id/VerticalLayout"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="141dp"
-        android:layout_height="192dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="172dp"
+        android:layout_height="231dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/a580b57fcd9996e24bc43c336" />
 
     <LinearLayout
         android:id="@+id/VerticalLayout"
-        android:layout_width="207dp"
-        android:layout_height="156dp"
+        android:layout_width="230dp"
+        android:layout_height="188dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="12dp"
         android:orientation="vertical"
         android:paddingTop="10dp"
         app:barrierMargin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
@@ -92,14 +92,14 @@
             android:id="@+id/Titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/TituloPelicula"
+            android:text="Sanic"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/director"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Director"
+            android:text="Director:"
             android:textSize="16sp" />
 
         <TextView
@@ -113,7 +113,7 @@
             android:id="@+id/anyo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/año"
+            android:text="Año:"
             android:textSize="16sp" />
 
         <TextView
@@ -127,7 +127,7 @@
             android:id="@+id/categorias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Categoria"
+            android:text="Comedia"
             android:textSize="16sp" />
     </LinearLayout>
 
