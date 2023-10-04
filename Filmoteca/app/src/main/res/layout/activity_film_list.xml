@@ -12,10 +12,11 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="138dp"
-      android:layout_marginTop="37dp"
+      android:layout_marginTop="8dp"
       android:layout_marginEnd="138dp"
       android:text="Acerca De"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.571"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/peliB" />
 
@@ -23,11 +24,9 @@
       android:id="@+id/peliA"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="137dp"
-      android:layout_marginTop="142dp"
-      android:layout_marginEnd="137dp"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="592dp"
       android:text="Ver Pelicula A"
-      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,12 +34,19 @@
       android:id="@+id/peliB"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="35dp"
-      android:layout_marginEnd="138dp"
-      android:layout_marginBottom="37dp"
+      android:layout_marginTop="592dp"
+      android:layout_marginEnd="12dp"
       android:text="Ver pelicula B"
-      app:layout_constraintBottom_toTopOf="@+id/acercaDe"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/peliA" />
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ListView
+      android:id="@+id/pelis"
+      android:layout_width="409dp"
+      android:layout_height="538dp"
+      android:layout_marginTop="1dp"
+      android:layout_marginEnd="1dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@
         android:layout_marginEnd="152dp"
         android:layout_marginBottom="68dp"
         android:text="Editando película"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -131,7 +132,7 @@
             android:insetLeft="3dp"
             android:insetTop="8dp"
             android:insetRight="3dp"
-            android:text="Tomar Fotografia" />
+            android:text="@string/TomarFotoBoton" />
 
         <Button
             android:id="@+id/seleccionarImg"
@@ -141,7 +142,7 @@
             android:insetLeft="3dp"
             android:insetTop="8dp"
             android:insetRight="3dp"
-            android:text="Seleccion imagen" />
+            android:text="@string/SeleccionarImagenBoton" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

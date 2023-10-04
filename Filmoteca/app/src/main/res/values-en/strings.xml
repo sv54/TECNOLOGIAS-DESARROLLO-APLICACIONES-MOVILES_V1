@@ -21,4 +21,6 @@
     <string name="SeleccionarImagenBoton">Select image</string>
     <string name="EditarBoton">Edit film</string>
     <string name="VolverPrincipalBoton">Back to the beginning</string>
+    <string name="VerEnIMDB">Watch with IMDB</string>
+
 </resources>

@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="164dp"
-        android:text="Editar película"
+        android:text="@string/EditarBoton"
         app:layout_constraintStart_toEndOf="@+id/VerticalLayout"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginTop="232dp"
-        android:text="Volver a la principal"
+        android:text="@string/VolverPrincipalBoton"
         app:layout_constraintStart_toEndOf="@+id/VerticalLayout"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
@@ -92,14 +92,14 @@
             android:id="@+id/Titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sanic"
+            android:text="@string/TituloPelicula"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/director"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Director:"
+            android:text="@string/Director"
             android:textSize="16sp" />
 
         <TextView
@@ -113,7 +113,7 @@
             android:id="@+id/anyo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Año:"
+            android:text="@string/año"
             android:textSize="16sp" />
 
         <TextView
@@ -127,7 +127,7 @@
             android:id="@+id/categorias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comedia"
+            android:text="@string/Categoria"
             android:textSize="16sp" />
     </LinearLayout>
 

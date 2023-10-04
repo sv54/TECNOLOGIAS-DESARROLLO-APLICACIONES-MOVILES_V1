@@ -21,4 +21,5 @@
     <string name="SeleccionarImagenBoton">Seleccionar imagen</string>
     <string name="EditarBoton">Editar Pelicula</string>
     <string name="VolverPrincipalBoton">Volver a la principal</string>
+    <string name="VerEnIMDB">Ver en IMDB</string>
 </resources>
