@@ -29,6 +29,7 @@ class FilmListActivity : AppCompatActivity() {
             intent.putExtra("titulo", selectedFilm.title)
             intent.putExtra("director", selectedFilm.director)
             intent.putExtra("genero", selectedFilm.genre)
+            intent.putExtra("anyo", selectedFilm.year)
             // Agrega más extras según sea necesario
 
             startActivity(intent)

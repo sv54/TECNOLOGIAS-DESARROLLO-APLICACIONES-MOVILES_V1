@@ -26,4 +26,24 @@ class Film {
         const val GENRE_HORROR = 4
     }
 
+    fun obtenerFormatoNombre(formato: Int): String {
+        return when (formato) {
+            FORMAT_DVD -> "DVD"
+            FORMAT_BLURAY -> "Blu-ray"
+            FORMAT_DIGITAL -> "Digital"
+            else -> "Desconocido"
+        }
+    }
+
+    fun obtenerGeneroNombre(genero: Int): String {
+        return when (genero) {
+            GENRE_ACTION -> "Acción"
+            GENRE_COMEDY -> "Comedia"
+            GENRE_DRAMA -> "Drama"
+            GENRE_SCIFI -> "Ciencia Ficción"
+            GENRE_HORROR -> "Terror"
+            else -> "Desconocido"
+        }
+
+    }
 }

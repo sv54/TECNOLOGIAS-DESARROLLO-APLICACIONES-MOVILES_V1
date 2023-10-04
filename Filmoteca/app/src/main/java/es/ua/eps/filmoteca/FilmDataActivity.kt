@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import es.ua.eps.filmoteca.databinding.ActivityFilmDataBinding
+import es.ua.eps.filmoteca.databinding.ActivityFilmEditBinding
 
 class FilmDataActivity : AppCompatActivity() {
 
@@ -20,13 +22,24 @@ class FilmDataActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             onActivityResult(CODIGO_EDITAR, result.resultCode, result.data)
         }
+
+    lateinit var binding: ActivityFilmDataBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_film_data)
+        binding = ActivityFilmDataBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
         val pelicula = intent.getStringExtra("EXTRA_FILM_TITLE")
         val texto = findViewById<TextView>(R.id.DatosPelicula)
-        texto.setText("Pelicula: "+ pelicula)
+        val titulo = intent.getStringExtra("titulo")
+        val genero = intent.getStringExtra("genero").toString()
+        val directorExtra = intent.getStringExtra("director")
+
+        val bindingtitulo = findViewById<TextView>(R.id.Titulo)
+        binding.Titulo.text = titulo
+
 
         val relacionada = findViewById<Button>(R.id.verPeliRelacionada)
         relacionada.setOnClickListener {
@@ -74,4 +87,6 @@ class FilmDataActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
