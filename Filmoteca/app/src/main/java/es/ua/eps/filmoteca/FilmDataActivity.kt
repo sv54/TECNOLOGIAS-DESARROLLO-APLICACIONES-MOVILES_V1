@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
@@ -31,14 +32,29 @@ class FilmDataActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val pelicula = intent.getStringExtra("EXTRA_FILM_TITLE")
-        val texto = findViewById<TextView>(R.id.DatosPelicula)
-        val titulo = intent.getStringExtra("titulo")
-        val genero = intent.getStringExtra("genero").toString()
-        val directorExtra = intent.getStringExtra("director")
+//        val pelicula = intent.getStringExtra("EXTRA_FILM_TITLE")
+//        val texto = findViewById<TextView>(R.id.DatosPelicula)
+        val titulo = intent.getStringExtra("extraTitulo")
+        val genero = intent.getIntExtra("extraGenero",-1)
+        val director = intent.getStringExtra("extraDirector")
+        val img = intent.getIntExtra("extraImg", 0)
+        val formato = intent.getIntExtra("extraFormato", 99)
+        val anyo = intent.getStringExtra("extraAnyo")
+        val enlaceIMDB = intent.getStringExtra("extraEnlaceIMDB")
+        val peliculaPosicion = intent.getIntExtra("extraPeliculaPosicion", 0)
 
-        val bindingtitulo = findViewById<TextView>(R.id.Titulo)
-        binding.Titulo.text = titulo
+        val f = Film()
+
+        val generoStr = f.obtenerGeneroNombre(genero)
+        val formatoStr = f.obtenerFormatoNombre(formato)
+
+
+        binding.TituloPelicula!!.text = titulo
+        binding.DirectorStr.text = director
+        binding.genero!!.text = generoStr
+        binding.formato!!.text = formatoStr
+        binding.anyoStr.text = anyo
+        binding.portada.setImageResource(img)
 
 
         val relacionada = findViewById<Button>(R.id.verPeliRelacionada)
@@ -55,6 +71,15 @@ class FilmDataActivity : AppCompatActivity() {
         val editar = findViewById<Button>(R.id.editar)
         editar.setOnClickListener {
             val data = Intent(this@FilmDataActivity, FilmEditActivity::class.java)
+            //val intent = Intent(this, FilmDataActivity::class.java)
+            data.putExtra("extraTitulo", titulo)
+            data.putExtra("extraDirector", director)
+            data.putExtra("extraAnyo", anyo)
+            data.putExtra("extraImg", img)
+            data.putExtra("extraFormato", formato)
+            data.putExtra("extraGenero", genero)
+            data.putExtra("extraEnlaceIMDB", enlaceIMDB)
+            data.putExtra("extraPeliculaPosicion", peliculaPosicion)
             if(Build.VERSION.SDK_INT >= 30) {
                 startForResult.launch(data)
             }

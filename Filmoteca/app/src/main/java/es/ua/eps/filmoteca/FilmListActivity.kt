@@ -3,12 +3,11 @@ package es.ua.eps.filmoteca
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import android.widget.Toast
 
 class FilmListActivity : AppCompatActivity() {
 
@@ -18,19 +17,22 @@ class FilmListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_film_list)
 
-        var adaptador = PeliculasArrayAdapter(this, R.layout.item_lenguaje ,FilmDataSource.films)
+        var adaptador = PeliculasArrayAdapter(this, R.layout.item_pelicula ,FilmDataSource.films)
         var lista = findViewById<ListView>(R.id.pelis)
         lista.adapter = adaptador
 
         lista.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
-            val selectedFilm = FilmDataSource.films[position] // Obtener la película seleccionada
+            val selectedFilm = FilmDataSource.films[position]
 
             val intent = Intent(this, FilmDataActivity::class.java)
-            intent.putExtra("titulo", selectedFilm.title)
-            intent.putExtra("director", selectedFilm.director)
-            intent.putExtra("genero", selectedFilm.genre)
-            intent.putExtra("anyo", selectedFilm.year)
-            // Agrega más extras según sea necesario
+            intent.putExtra("extraPeliculaPosicion", position)
+            intent.putExtra("extraTitulo", selectedFilm.title)
+            intent.putExtra("extraDirector", selectedFilm.director)
+            intent.putExtra("extraAnyo", selectedFilm.year.toString())
+            intent.putExtra("extraImg", selectedFilm.imageResId)
+            intent.putExtra("extraFormato", selectedFilm.format)
+            intent.putExtra("extraGenero", selectedFilm.genre)
+            intent.putExtra("extraEnlaceIMDB", selectedFilm.imdbUrl)
 
             startActivity(intent)
         }

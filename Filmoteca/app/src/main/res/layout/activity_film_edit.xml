@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editTitulo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -59,7 +59,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/editDirector"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -67,7 +67,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editAnyo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -75,21 +75,21 @@
             android:inputType="number" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinnerGenero"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:entries="@array/generos"
             android:prompt="@string/genero" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/spinnerFormato"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:entries="@array/formato"
             android:prompt="@string/formato" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/editEnlaceIMDB"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -97,7 +97,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/editNota"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/poster"
             android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:layout_weight="6"

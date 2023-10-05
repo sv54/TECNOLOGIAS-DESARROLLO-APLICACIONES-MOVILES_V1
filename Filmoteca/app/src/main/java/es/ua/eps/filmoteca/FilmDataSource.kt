@@ -52,7 +52,7 @@ package es.ua.eps.filmoteca
             var f5 = Film()
             f5.title = "Sanic"
             f5.director = "Jeff Fowler"
-            f5.imageResId = R.mipmap.ic_launcher
+            f5.imageResId = R.drawable.a580b57fcd9996e24bc43c336
             f5.comments = ""
             f5.format = Film.Companion.FORMAT_DIGITAL
             f5.genre = Film.Companion.GENRE_SCIFI

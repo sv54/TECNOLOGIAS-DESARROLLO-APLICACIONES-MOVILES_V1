@@ -16,7 +16,7 @@ class PeliculasArrayAdapter(context: Context?, resource: Int,
         parent: ViewGroup
     ): View {
         var view: View = convertView ?: LayoutInflater.from(this.context)
-            .inflate(R.layout.item_lenguaje, parent, false)
+            .inflate(R.layout.item_pelicula, parent, false)
 
         val tvNombre = view.findViewById(R.id.nombre) as TextView
         val tvDesc = view.findViewById(R.id.descripcion) as TextView
