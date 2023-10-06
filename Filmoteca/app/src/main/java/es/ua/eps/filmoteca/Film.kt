@@ -3,7 +3,7 @@ package es.ua.eps.filmoteca
 class Film {
 
     var imageResId = 0 // Propiedades de la clase
-    var title: String? = null
+    var title: String? = "Sin titulo"
     var director: String? = null
     var year = 0
     var genre = 0

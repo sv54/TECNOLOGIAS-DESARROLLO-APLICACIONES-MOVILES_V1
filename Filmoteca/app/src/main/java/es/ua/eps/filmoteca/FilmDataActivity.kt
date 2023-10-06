@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.ActivityResult
@@ -26,7 +27,23 @@ class FilmDataActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityFilmDataBinding
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Si el usuario hace clic en el botón de home
+        if (item.itemId == android.R.id.home) {
+            // Volvemos a la actividad principal
+            val intent = Intent(this, FilmListActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         super.onCreate(savedInstanceState)
         binding = ActivityFilmDataBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,6 +16,8 @@ import es.ua.eps.filmoteca.databinding.ActivityFilmEditBinding
 class FilmEditActivity : AppCompatActivity() {
     val cameraRequestCode = 1
     lateinit var binding: ActivityFilmEditBinding
+    var img: Bitmap? = null
+
     val galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) {
         val galleryUri = it
         try{
@@ -25,16 +28,31 @@ class FilmEditActivity : AppCompatActivity() {
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Si el usuario hace clic en el botón de home
+        if (item.itemId == android.R.id.home) {
+            // Volvemos a la actividad principal
+            val intent = Intent(this, FilmListActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFilmEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         val titulo = intent.getStringExtra("extraTitulo")
         val genero = intent.getIntExtra("extraGenero",-1)
         val director = intent.getStringExtra("extraDirector")
-        val img = intent.getIntExtra("extraImg", 0)
+//        val img = intent.getIntExtra("extraImg", 0)
         val formato = intent.getIntExtra("extraFormato", 99)
         val anyo = intent.getStringExtra("extraAnyo")
         val enlaceIMDB = intent.getStringExtra("extraEnlaceIMDB")
@@ -72,7 +90,9 @@ class FilmEditActivity : AppCompatActivity() {
             pelicula.genre = binding.spinnerGenero.selectedItemPosition
             pelicula.format = binding.spinnerFormato.selectedItemPosition
             pelicula.imdbUrl = binding.editEnlaceIMDB.text.toString()
-
+            if ( img != null){
+//                pelicula.imageResId = img
+            }
             FilmDataSource.films[peliculaPosicion] = pelicula
             Log.i("My Tag", peliculaPosicion.toString() ?: "sin Titulo")
 
@@ -99,6 +119,7 @@ class FilmEditActivity : AppCompatActivity() {
         if (requestCode == cameraRequestCode && resultCode == Activity.RESULT_OK) {
             val photo = data?.extras?.get("data") as Bitmap
             val imageView = findViewById<ImageView>(R.id.poster)
+            img = photo
             imageView.setImageBitmap(photo)
         }
     }

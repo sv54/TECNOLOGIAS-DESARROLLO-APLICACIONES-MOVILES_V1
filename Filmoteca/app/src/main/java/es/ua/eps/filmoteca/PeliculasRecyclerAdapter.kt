@@ -10,11 +10,23 @@ import androidx.recyclerview.widget.RecyclerView
 class PeliculasRecyclerAdapter(val peliculas: List<Film>):
     RecyclerView.Adapter<PeliculasRecyclerAdapter.ViewHolder?>() {
 
+    private var listener: (pelicula: Film, position: Int) -> Unit = { film: Film, i: Int -> }
+
+    fun setOnItemClickListener(listener: (pelicula: Film, position: Int) -> Unit) {
+        this.listener = listener // Guardamos una referencia al listener
+    }
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): ViewHolder {
         val v: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_pelicula, parent, false)
-        return ViewHolder(v)
+        val holder = ViewHolder(v)
+
+        v.setOnClickListener {
+            val position: Int = holder.adapterPosition
+            listener(peliculas[position], position)
+        }
+
+        return holder
     }
 
     override fun getItemCount(): Int {
