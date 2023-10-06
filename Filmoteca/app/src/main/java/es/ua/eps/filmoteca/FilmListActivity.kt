@@ -52,6 +52,12 @@ class FilmListActivity : AppCompatActivity() {
             startActivity(data)
         }
 
+        val recycler = findViewById<Button>(R.id.Recycler)
+        recycler.setOnClickListener {
+            val data = Intent(this@FilmListActivity, FilmRecyclerListActivity::class.java)
+            startActivity(data)
+        }
+
         val acercaDe = findViewById<Button>(R.id.acercaDe)
         acercaDe.setOnClickListener {
             val data = Intent(this@FilmListActivity, AboutActivity::class.java)
