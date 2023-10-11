@@ -1,17 +1,20 @@
 package es.ua.eps.filmoteca
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.ActionMode
 import android.view.ContextMenu
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AbsListView
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ListView
 import androidx.appcompat.widget.Toolbar
 
@@ -55,18 +58,12 @@ class FilmListActivity : AppCompatActivity() {
             }
 
         }
-        // Devolvemos false si no hemos hecho nada con el elemento
-        // seleccionado (permitirá que se ejecuten otros manejadores)
-        // Si devolvemos true finalizará el procesamiento.
         return false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_film_list)
-//        val toolbar: Toolbar = findViewById(R.id.toolbar3) as Toolbar
-//        setSupportActionBar(toolbar)
-//        toolbar.setTitle("Menu")
 
         adaptador = PeliculasArrayAdapter(this, R.layout.item_pelicula ,FilmDataSource.films)
         var lista = findViewById<ListView>(R.id.pelis)
@@ -110,10 +107,8 @@ class FilmListActivity : AppCompatActivity() {
                             // Obtenemos los elementos seleccionados de la lista
                             val itemsSeleccionados = lista.checkedItemPositions
 
-// Crear una lista para almacenar las posiciones seleccionadas
                             val posicionesSeleccionadas = mutableListOf<Int>()
 
-// Iterar a través de las posiciones en SparseBooleanArray
                             for (i in 0 until itemsSeleccionados.size()) {
                                 val posicion = itemsSeleccionados.keyAt(i)
                                 val seleccionado = itemsSeleccionados.valueAt(i)
@@ -130,11 +125,7 @@ class FilmListActivity : AppCompatActivity() {
                             for(i in pos){
                                 FilmDataSource.films.removeAt(i)
                             }
-
-                            // Actualizamos la lista
                             adaptador!!.notifyDataSetChanged()
-
-                            // Cerramos el modo de selección múltiple
                             mode.finish()
 
                             true
@@ -147,6 +138,13 @@ class FilmListActivity : AppCompatActivity() {
 
                 override fun onItemCheckedStateChanged(mode: ActionMode,
                                                        position: Int, id: Long, checked: Boolean) {
+                    if (checked) {
+                        val color = Color.parseColor("#99CCFF")
+                        lista.getChildAt(position).setBackgroundColor(color)
+                    } else {
+                        lista.getChildAt(position).setBackgroundColor(Color.TRANSPARENT)
+
+                    }
                 }
             })
 
@@ -168,6 +166,12 @@ class FilmListActivity : AppCompatActivity() {
         val recycler = findViewById<Button>(R.id.Recycler)
         recycler.setOnClickListener {
             val data = Intent(this@FilmListActivity, FilmRecyclerListActivity::class.java)
+            startActivity(data)
+        }
+
+        val ListaFragment = findViewById<Button>(R.id.Fragment)
+        ListaFragment.setOnClickListener {
+            val data = Intent(this@FilmListActivity, FilmListFragment::class.java)
             startActivity(data)
         }
 
