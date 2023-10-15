@@ -169,12 +169,6 @@ class FilmListActivity : AppCompatActivity() {
             startActivity(data)
         }
 
-        val ListaFragment = findViewById<Button>(R.id.Fragment)
-        ListaFragment.setOnClickListener {
-            val data = Intent(this@FilmListActivity, FilmListFragment::class.java)
-            startActivity(data)
-        }
-
         val acercaDe = findViewById<Button>(R.id.acercaDe)
         acercaDe.setOnClickListener {
             val data = Intent(this@FilmListActivity, AboutActivity::class.java)

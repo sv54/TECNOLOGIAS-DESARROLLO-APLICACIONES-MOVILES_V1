@@ -22,4 +22,6 @@
     <string name="EditarBoton">Editar Pelicula</string>
     <string name="VolverPrincipalBoton">Volver a la principal</string>
     <string name="VerEnIMDB">Ver en IMDB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
