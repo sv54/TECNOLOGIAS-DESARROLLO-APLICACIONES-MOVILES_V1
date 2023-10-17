@@ -6,145 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".FilmDataFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".FilmDataActivity">
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="119dp"
-            android:layout_marginEnd="119dp"
-            android:layout_marginBottom="95dp"
-            android:text="@string/VolverPrincipalBoton"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="#2196F3"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
-            android:layout_marginEnd="137dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/EditarBoton"
-            app:layout_constraintBottom_toTopOf="@+id/button9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/editResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="201dp"
-            android:layout_marginEnd="210dp"
-            android:layout_marginBottom="75dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="145dp"
-            android:text="@string/TituloHint"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.057"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/año"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/director" />
-
-        <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tituloApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Director:"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo" />
-
-        <TextView
-            android:id="@+id/formato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="14dp"
-            android:text="DVD"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/genero" />
-
-        <TextView
-            android:id="@+id/anyo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="1985"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <TextView
-            android:id="@+id/genero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="15dp"
-            android:text="Drama"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/anyo" />
-
-        <TextView
-            android:id="@+id/director"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="Editar Director"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            android:text="Filmoteca"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintHorizontal_bias="0.099"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <Button
-            android:id="@+id/imdb"
+            android:id="@+id/verPeliRelacionada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
-            android:text="Editar IMDB"
+            android:layout_marginTop="192dp"
+            android:layout_marginEnd="112dp"
+            android:text="@string/VerEnIMDB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/VerticalLayout" />
+
+        <Button
+            android:id="@+id/editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="340dp"
+            android:text="@string/EditarBoton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/volverAPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/VolverPrincipalBoton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="183dp"
-            android:layout_height="331dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="76dp"
+            android:id="@+id/portada"
+            android:layout_width="141dp"
+            android:layout_height="192dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/a580b57fcd9996e24bc43c336" />
+
+        <LinearLayout
+            android:id="@+id/VerticalLayout"
+            android:layout_width="233dp"
+            android:layout_height="191dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            app:barrierMargin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintStart_toEndOf="@+id/portada"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <TextView
+                android:id="@+id/TituloPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/director"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Director"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/DirectorStr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jeff Fowler"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/anyo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/año"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/anyoStr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2020"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/genero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Categoria"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/formato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DVD"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/Titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/DatosPelicula"
+            android:layout_width="58dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="36dp"
+            android:text="TextView"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

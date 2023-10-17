@@ -1,11 +1,13 @@
 package es.ua.eps.filmoteca
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import es.ua.eps.filmoteca.databinding.ActivityFilmDataBinding
@@ -27,7 +29,7 @@ class FilmDataFragment : Fragment() {
     private var film: Film? = null
     private lateinit var binding: FragmentFilmDataBinding
     private var position: Int = -1
-    
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +38,15 @@ class FilmDataFragment : Fragment() {
         binding = FragmentFilmDataBinding.inflate(inflater, container, false)
 
         // Inflate the layout for this fragment
+
+        binding.volverAPrincipal.setOnClickListener {
+            val volverIntent = Intent(this.context, MainActivity::class.java)
+            volverIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(volverIntent)
+        }
+
         return binding.root
+
     }
 
     fun setDetalleItem(position: Int) {
@@ -46,9 +56,9 @@ class FilmDataFragment : Fragment() {
 
         val film = FilmDataSource.films[position.toInt()]
 //        activity?.findViewById<TextView>()
-        binding.titulo.setText(film.title)
-        binding.anyo.setText(film.year.toString())
-        binding.director.text = film.director
+        binding.TituloPelicula.setText(film.title)
+        binding.anyoStr.setText(film.year.toString())
+        binding.DirectorStr.text = film.director
         val genre = film.genre
         var genero = ""
         when (genre) {
