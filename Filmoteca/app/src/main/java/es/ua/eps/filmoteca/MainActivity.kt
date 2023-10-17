@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity(),FilmListFragment.OnItemSelectedListener {
     //...
     override fun onItemSelected(position: Int) {
-        var detalleFragment = fragmentManager
+        var detalleFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView2) as FilmDataFragment?
         Log.d("Tag", "Clicked item at position: $position")
 
@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity(),FilmListFragment.OnItemSelectedListener
             // Tipo estático: actualizamos directamente el fragmento
             detalleFragment.setDetalleItem(position)
         } else {
-            /*// Tipo dinámico: hacemos transición al nuevo fragmento
+            // Tipo dinámico: hacemos transición al nuevo fragmento
             detalleFragment = FilmDataFragment()
             val args = Bundle()
-            args.putInt(PARAM_POSICION, position)
+            args.putInt(FilmDataFragment.PARAM_POSICION, position)
             detalleFragment.arguments = args
 
-            val t = fragmentManager.beginTransaction()
-            t.replace(R.id.fragment_container, detalleFragment)
+            val t = supportFragmentManager.beginTransaction()
+            t.replace(R.id.fragmentContainerView3, detalleFragment)
             t.addToBackStack(null)
-            t.commit()*/
+            t.commit()
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {

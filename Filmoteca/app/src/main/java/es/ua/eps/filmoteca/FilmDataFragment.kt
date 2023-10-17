@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import es.ua.eps.filmoteca.databinding.ActivityFilmDataBinding
 import es.ua.eps.filmoteca.databinding.FragmentFilmDataBinding
@@ -25,49 +26,48 @@ class FilmDataFragment : Fragment() {
     private var pos: Int? = null
     private var film: Film? = null
     private lateinit var binding: FragmentFilmDataBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private var position: Int = -1
+    
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentFilmDataBinding.inflate(inflater, container, false)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_film_data, container, false)
+        return binding.root
     }
 
     fun setDetalleItem(position: Int) {
-        Log.i("Tag", "This is an information message")
+
         pos = position
         film = FilmDataSource.films[position]
-        binding = FragmentFilmDataBinding.inflate(layoutInflater)
 
         val film = FilmDataSource.films[position.toInt()]
+//        activity?.findViewById<TextView>()
         binding.titulo.setText(film.title)
         binding.anyo.setText(film.year.toString())
-        binding.director.setText(film.director)
+        binding.director.text = film.director
         val genre = film.genre
         var genero = ""
-        when(genre){
-            0->genero="Acción"
-            1->genero="Comedia"
-            2->genero="Drama"
-            3->genero="Sci-Fi"
-            4->genero="Horror"
-            else->genero="Error"
+        when (genre) {
+            0 -> genero = "Acción"
+            1 -> genero = "Comedia"
+            2 -> genero = "Drama"
+            3 -> genero = "Sci-Fi"
+            4 -> genero = "Horror"
+            else -> genero = "Error"
         }
 
         binding.genero.setText(genero)
         val format = film.format
-        var formato =""
-        when(format){
-            0->formato="DVD"
-            1->formato="Blu-ray"
-            2->formato="Digital"
-            else->formato="Error"
+        var formato = ""
+        when (format) {
+            0 -> formato = "DVD"
+            1 -> formato = "Blu-ray"
+            2 -> formato = "Digital"
+            else -> formato = "Error"
         }
         binding.formato.setText(formato)
 
@@ -76,6 +76,8 @@ class FilmDataFragment : Fragment() {
     }
 
     companion object {
+        const val PARAM_POSICION = "PARAM_POSICION"
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -93,5 +95,19 @@ class FilmDataFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Check if arguments contain PARAM_POSICION and set the detail if it does
+        arguments?.let {
+            if (it.containsKey(PARAM_POSICION)) {
+                val position = it.getInt(PARAM_POSICION)
+                setDetalleItem(position)
+            }
+        }
+
+
     }
 }
