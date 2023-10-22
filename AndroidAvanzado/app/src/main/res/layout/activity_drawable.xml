@@ -10,7 +10,7 @@
         android:id="@+id/drawable"
         android:layout_width="match_parent"
         android:layout_height="84dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/ej1"
         android:text="Ejercicio 1"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,10 +19,33 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="216dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/ej2"
         android:text="Ejercicio 2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="340dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/ej3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="210dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:max = "10000"
+        android:progressDrawable = "@drawable/ej4"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
