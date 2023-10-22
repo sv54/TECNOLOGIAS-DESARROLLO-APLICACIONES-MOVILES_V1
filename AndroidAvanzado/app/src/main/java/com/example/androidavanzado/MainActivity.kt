@@ -17,8 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.botonDrawables.setOnClickListener{
-            val volverIntent = Intent(this@MainActivity, drawableActivity::class.java)
-            startActivity(volverIntent)
+            val drawable = Intent(this@MainActivity, drawableActivity::class.java)
+            startActivity(drawable)
+        }
+
+        binding.botonPersonalizacion.setOnClickListener{
+            val personalizacion = Intent(this@MainActivity, personalizacionActivity::class.java)
+            startActivity(personalizacion)
         }
 
 
