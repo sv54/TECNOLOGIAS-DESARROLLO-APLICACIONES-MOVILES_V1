@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Grafica"></declare-styleable>
+    <declare-styleable name="Grafica_percentage"></declare-styleable>
+    <declare-styleable name="Grafica_colorRed"></declare-styleable>
+    <declare-styleable name="Grafica_colorBlue"></declare-styleable>
+</resources>
