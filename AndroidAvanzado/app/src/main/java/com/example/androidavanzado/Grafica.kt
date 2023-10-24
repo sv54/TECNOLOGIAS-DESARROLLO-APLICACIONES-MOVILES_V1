@@ -4,71 +4,50 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
-class Grafica: View {
+class Grafica(context: Context, attrs: AttributeSet) : View(context, attrs) {
+
+    // Atributos
     private var percentage: Int = 50
-    private var colorRed : Int = Color.RED
-    private var colorBlue: Int= Color.BLUE
 
-    constructor(context: Context): this (context, null)
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        // Obtener los atributos del XML
-        val attributes = context.obtainStyledAttributes(attrs, R.styleable.Grafica)
-        percentage = attributes.getInt(R.styleable.Grafica_percentage, 50)
-        colorRed = attributes.getColor(R.styleable.Grafica_colorRed, Color.RED)
-        colorBlue = attributes.getColor(R.styleable.Grafica_colorBlue, Color.BLUE)
-        attributes.recycle()
-    }
+    private val colorRed = Color.RED
+    private val colorBlue = Color.BLUE
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        setMeasuredDimension(100, 100)
+    private val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val paintBlue = Paint(Paint.ANTI_ALIAS_FLAG)
+
+    init {
+        paintRed.color = colorRed
+        paintBlue.color = colorBlue
     }
 
     override fun onDraw(canvas: Canvas) {
-        // Obtener el ancho y el alto de la vista
-        val width = measuredWidth
-        val height = measuredHeight
+        super.onDraw(canvas)
 
-        // Dibuja el círculo rojo
-        val cx = width / 2f
-        val cy = height / 2f
-        val radius = Math.min(width, height) / 2f
-        canvas.drawCircle(cx, cy, radius, Paint().apply {
-            color = colorRed
-            style = Paint.Style.FILL
-        })
+        val viewWidth = width.toFloat()
+        val viewHeight = height.toFloat()
 
-        // Dibuja el círculo azul
-        val arcAngle = (360f * percentage) / 100f
-        canvas.drawArc(
-            RectF(cx - radius, cy - radius, cx + radius, cy + radius),
-            0f,
-            arcAngle,
-            true,
-            Paint().apply {
-                color = colorBlue
-                style = Paint.Style.FILL
-            }
+        val angle = (percentage / 100f) * 360
+
+        canvas.drawArc(0f, 0f, viewWidth, viewHeight, angle, 360 - angle, true, paintBlue)
+
+        canvas.drawArc(0f, 0f, viewWidth, viewHeight, 0f, angle, true, paintRed)
+    }
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val desiredSize = 100
+        setMeasuredDimension(
+            resolveSize(desiredSize, widthMeasureSpec),
+            resolveSize(desiredSize, heightMeasureSpec)
         )
     }
-
     fun setPercentage(percentage: Int) {
         this.percentage = percentage
         invalidate()
     }
 
+
 }
 
-private fun <TypedArray> TypedArray.getColor(graficaColorred: IntArray?, red: Int): Int {
-    val color = if (graficaColorred == null) red else graficaColorred[0]
-    return color
-}
 
-private fun <TypedArray> TypedArray.getInt(graficaPercentage: IntArray?, i: Int): Int {
-    val percentage = if (graficaPercentage == null) i else graficaPercentage[0]
-    return percentage
-}

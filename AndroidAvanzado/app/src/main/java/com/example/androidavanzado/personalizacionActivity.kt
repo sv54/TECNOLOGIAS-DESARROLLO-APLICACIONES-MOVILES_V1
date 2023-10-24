@@ -1,5 +1,6 @@
 package com.example.androidavanzado
 
+import com.example.androidavanzado.Grafica
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
@@ -11,23 +12,18 @@ class personalizacionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personalizacion)
+        val seekBar = findViewById<SeekBar>(R.id.seekbar)
+        val grafica = findViewById<Grafica>(R.id.grafica)
 
-        // Obtener la gráfica
-//        grafica = findViewById(R.id.grafica)
-//
-        // Obtener el SeekBar
-        seekBar = findViewById(R.id.seekbar)
-        seekBar.max = 100
-
-        // Escuchar los cambios del SeekBar
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 grafica.setPercentage(progress)
             }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar) {}
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
 
-            override fun onStopTrackingTouch(seekBar: SeekBar) {}
-        })
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            })
+
     }
 }

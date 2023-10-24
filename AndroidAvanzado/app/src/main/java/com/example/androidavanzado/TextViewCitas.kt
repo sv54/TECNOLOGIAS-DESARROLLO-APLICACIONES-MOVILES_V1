@@ -26,13 +26,8 @@ class TextViewCitas : AppCompatTextView {
     )
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-
-        // Obtener una cita al azar
         val citaAleatoria = citasFamosas.random()
-
-        // Establecer el texto del TextView
         text = citaAleatoria
-
         return super.onTouchEvent(event)
     }
 }
