@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textoToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Temas"
@@ -24,15 +24,6 @@
         android:text="Drawables"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/boton_hilos_ejecucion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Hilos de ejecución"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_estilos_temas" />
 
     <Button
         android:id="@+id/boton_personalizacion"
@@ -53,13 +44,22 @@
         app:layout_constraintTop_toBottomOf="@+id/boton_personalizacion" />
 
     <Button
-        android:id="@+id/boton_pantalla_tactil"
+        android:id="@+id/boton_notificaciones2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Pantalla táctil y detección de gestos"
+        android:text="Notificaciones 2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_notificaciones" />
+
+    <Button
+        android:id="@+id/boton_notificaciones3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Notificaciones 3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_notificaciones2" />
 
     <Button
         android:id="@+id/boton_estilos_temas"
@@ -69,5 +69,23 @@
         android:text="Estilos y temas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_pantalla_tactil" />
+
+    <Button
+        android:id="@+id/boton_hilos_ejecucion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hilos de ejecución"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_estilos_temas" />
+
+    <Button
+        android:id="@+id/boton_pantalla_tactil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Pantalla táctil y detección de gestos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_notificaciones3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

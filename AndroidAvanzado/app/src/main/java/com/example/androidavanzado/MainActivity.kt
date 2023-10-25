@@ -3,6 +3,7 @@ package com.example.androidavanzado
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import com.example.androidavanzado.databinding.ActivityMainBinding
 
@@ -26,6 +27,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(personalizacion)
         }
 
+        binding.botonNotificaciones.setOnClickListener{
+            val notificacacion = Intent(this@MainActivity, NotificacionesActivity::class.java)
+            startActivity(notificacacion)
+        }
+
+        binding.botonNotificaciones2.setOnClickListener{
+            val notificacacion2 = Intent(this@MainActivity, Notificaciones2Activity::class.java)
+            startActivity(notificacacion2)
+        }
+
+        binding.botonNotificaciones3.setOnClickListener{
+            val notificacacion3 = Intent(this@MainActivity, Notificaciones3Activity::class.java)
+            startActivity(notificacacion3)
+        }
 
     }
 

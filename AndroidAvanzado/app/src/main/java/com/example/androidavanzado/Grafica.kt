@@ -8,13 +8,9 @@ import android.util.AttributeSet
 import android.view.View
 
 class Grafica(context: Context, attrs: AttributeSet) : View(context, attrs) {
-
-    // Atributos
     private var percentage: Int = 50
-
     private val colorRed = Color.RED
     private val colorBlue = Color.BLUE
-
     private val paintRed = Paint(Paint.ANTI_ALIAS_FLAG)
     private val paintBlue = Paint(Paint.ANTI_ALIAS_FLAG)
 

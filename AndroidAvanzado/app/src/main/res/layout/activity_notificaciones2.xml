@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notificaciones2Activity">
+
+    <Button
+        android:id="@+id/tamano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Tamaño"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="412dp"
+        android:layout_height="652dp"
+        android:layout_marginTop="152dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textitos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Para practicar con los diálogos vamos a crear una aplicación que muestre un texto y nos permita personalizar su apariencia. La aplicación constará de una única actividad con un texto de ejemplo (copia dos párrafos cualesquiera) y dos botones en la parte superior: &quot;Color&quot; y &quot;Tamaño&quot;. Al pulsar sobre el botón &quot;Color&quot; mostraremos un diálogo de selección con tres opciones: &quot;Blanco y Negro&quot;, &quot;Negro y Blanco&quot; o &quot;Negro y Verde&quot;, donde el primer color se refiere al fondo y el segundo al texto. Y al pulsar sobre el botón &quot;Tamaño&quot; mostraremos un diálogo con las opciones: &quot;Pequeño&quot;, &quot;Normal&quot; y &quot;Grande&quot;, que se corresponderán con los tamaños de 8sp, 12sp y 20sp. Desde código podemos cambiar el tamaño del texto mediante la función: setTextSize(TypedValue.COMPLEX_UNIT_SP, tamaño).Para practicar con los diálogos vamos a crear una aplicación que muestre un texto y nos permita personalizar su apariencia. La aplicación constará de una única actividad con un texto de ejemplo (copia dos párrafos cualesquiera) y dos botones en la parte superior: &quot;Color&quot; y &quot;Tamaño&quot;. Al pulsar sobre el botón &quot;Color&quot; mostraremos un diálogo de selección con tres opciones: &quot;Blanco y Negro&quot;, &quot;Negro y Blanco&quot; o &quot;Negro y Verde&quot;, donde el primer color se refiere al fondo y el segundo al texto. Y al pulsar sobre el botón &quot;Tamaño&quot; mostraremos un diálogo con las opciones: &quot;Pequeño&quot;, &quot;Normal&quot; y &quot;Grande&quot;, que se corresponderán con los tamaños de 8sp, 12sp y 20sp. Desde código podemos cambiar el tamaño del texto mediante la función: setTextSize(TypedValue.COMPLEX_UNIT_SP, tamaño)." />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
+        android:text="Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@ class EdicionBorrable : LinearLayout {
         li.inflate(R.layout.edicion_borrable_layout, this, true)
 
         editText = findViewById(R.id.editText) as EditText
-        button = findViewById(R.id.button) as Button
+        button = findViewById(R.id.addTarea) as Button
 
         button!!.setOnClickListener { editText!!.setText("") }
     }
