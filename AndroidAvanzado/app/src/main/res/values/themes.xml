@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.AndroidAvanzado" parent="Base.Theme.AndroidAvanzado" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_fondo</item>
+        <item name="android:textColorPrimary">@color/color_texto</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+    </style>
 </resources>

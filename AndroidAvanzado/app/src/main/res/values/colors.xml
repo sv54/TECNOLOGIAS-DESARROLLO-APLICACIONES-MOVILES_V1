@@ -6,4 +6,6 @@
     <color name="dos">#FFFF00</color>
     <color name="tres">#FF8800</color>
     <color name="cuatro">#FF0000</color>
+    <color name="color_fondo">#CDCDCD</color>
+    <color name="color_texto">#000080</color>
 </resources>

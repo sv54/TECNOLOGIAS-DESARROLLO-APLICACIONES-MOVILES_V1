@@ -46,6 +46,11 @@ class MainActivity : AppCompatActivity() {
             val pantalla = Intent(this@MainActivity, PantallaTactilYGestosActivity::class.java)
             startActivity(pantalla)
         }
+        
+        binding.botonEstilosTemas.setOnClickListener{
+            val estilos = Intent(this@MainActivity, EstilosTemasActivity::class.java)
+            startActivity(estilos)
+        }
 
     }
 

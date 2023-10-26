@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EstiloTitulo" parent="@android:style/TextAppearance.Large">
+    </style>
+    <style name="EstiloBoton">
+        <item name="android:background">@drawable/fondo_boton</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <!-- Otros atributos de estilo si es necesario -->
+    </style>
+</resources>
