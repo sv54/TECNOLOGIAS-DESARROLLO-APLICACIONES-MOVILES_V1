@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(notificacacion3)
         }
 
+        binding.botonPantallaTactil.setOnClickListener{
+            val pantalla = Intent(this@MainActivity, PantallaTactilYGestosActivity::class.java)
+            startActivity(pantalla)
+        }
+
     }
 
 
