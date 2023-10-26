@@ -15,6 +15,18 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".CorrutinasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsyncActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThreadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EjemploHilosActivity"
+            android:exported="false" />
+        <activity
             android:name=".EstilosActivity2"
             android:exported="false" />
         <activity

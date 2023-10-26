@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(estilos)
         }
 
+        binding.botonHilosEjecucion.setOnClickListener{
+            val hilos = Intent(this@MainActivity, EjemploHilosActivity::class.java)
+            startActivity(hilos)
+        }
     }
 
 
